@@ -74,5 +74,3 @@ jobs:
           rm -rf nuget/
           dotnet pack --no-build --configuration Release --property:Version=${{ steps.gitversion.outputs.nuGetVersionV2 }} --output nuget
           dotnet nuget push nuget/*.nupkg -k '${{ secrets.NUGET_API_KEY }}' --skip-duplicate -s https://api.nuget.org/v3/index.json
-      - name: Pack
-        run:
